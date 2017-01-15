@@ -1,0 +1,124 @@
+﻿<Window x:Class="CDN_FX.Windows.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CDN_FX.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
+        xmlns:sControls="clr-namespace:CDN_FX.UserControls.Settings"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Title="Settings" Height="501" Width="643" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Title -->
+        <materialDesign:ColorZone Padding="0" materialDesign:ShadowAssist.ShadowDepth="Depth1" Mode="PrimaryMid" Grid.Row="0" VerticalAlignment="Stretch">
+            <TextBlock FontFamily="Roboto" FontSize="26" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="Settings"/>
+        </materialDesign:ColorZone>
+        
+        <!--Tab Control -->
+        <dockablz:Layout Grid.Row="1">
+            <dragablz:TabablzControl BorderThickness="0" Margin="0 0 0 0">
+
+                <!-- General -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Settings" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="General" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <sControls:General x:Name="ucGeneral"/>
+
+                </TabItem>
+
+                <!-- Ticket Manager -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="EqualBox" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="Ticket Manager" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <sControls:TicketManager x:Name="ucTicketManager" />
+
+                </TabItem>
+
+                <!-- Title Downloader -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Download" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="Title Downloader" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <sControls:TitleDownloader x:Name="ucTitleDownloader" />
+
+                </TabItem>
+
+                <!-- NUS Downloader -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BriefcaseDownload" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="NUS Downloader" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <sControls:NUSDownloader x:Name="ucNUSDownloader" />
+
+                </TabItem>
+
+                <!-- About -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountMultiple" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="About" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <sControls:About />
+
+                </TabItem>
+
+            </dragablz:TabablzControl>
+        </dockablz:Layout>
+
+        <Separator Grid.Row="2" VerticalAlignment="Center" />
+        <!-- OK Button -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Version -->
+            <TextBlock Text="Version dev-3.0" Margin="10 0 0 0" VerticalAlignment="Center" FontFamily="Roboto" />
+            
+            <!-- Buttons -->
+            <Button x:Name="btnOK" Grid.Column="1" Margin="10 0 5 0" FontFamily="Roboto" FontSize="14" Content="OK" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnOK_Click"/>
+            <Button x:Name="btnCancel" Grid.Column="2" Margin="5 0 10 0" FontFamily="Roboto" FontSize="14" Content="Cancel" Style="{StaticResource MaterialDesignRaisedAccentButton}" Click="btnCancel_Click"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

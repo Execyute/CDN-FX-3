@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="CDN_FX.UserControls.Entries.DVEntries"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CDN_FX.UserControls.Entries"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="263" d:DesignWidth="230">
+    <Grid>
+        
+        <GroupBox Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="0,0,0,0" materialDesign:ColorZoneAssist.Mode="PrimaryMid" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Height="263" Width="230">
+            <GroupBox.Header>
+                <TextBlock Text="Entries" FontFamily="Roboto" HorizontalAlignment="Center" Foreground="White"/>
+            </GroupBox.Header>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="97*" />
+                    <ColumnDefinition Width="26*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Total Entries" FontSize="16" FontFamily="Roboto"/>
+
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="eShop Apps" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Text="DLP" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="Demo" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Text="Updates" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="6" Text="DLC" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Text="DSiWare" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="8" Text="DSi System Apps" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="9" Text="DSi System Data" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="10" Text="System" FontSize="16" FontFamily="Roboto"/>
+
+                <TextBlock x:Name="lblTotalEntriesCount" Grid.Column="1" Grid.Row="0" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lbleShopCount" Grid.Column="1" Grid.Row="2" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblDLPCount" Grid.Column="1" Grid.Row="3" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblDemoCount" Grid.Column="1" Grid.Row="4" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblUpdateCount" Grid.Column="1" Grid.Row="5" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblDLCCount" Grid.Column="1" Grid.Row="6" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblDSiWareCount" Grid.Column="1" Grid.Row="7" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblDSiSysAppsCount" Grid.Column="1" Grid.Row="8" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblDSiSysDataCount" Grid.Column="1" Grid.Row="9" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblSystemCount" Grid.Column="1" Grid.Row="10" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+
+            </Grid>
+        </GroupBox>
+        
+    </Grid>
+</UserControl>

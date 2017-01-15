@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="CDN_FX.UserControls.AppCategory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CDN_FX.UserControls"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="350" d:DesignWidth="230">
+    <Grid>
+
+        <GroupBox Style="{DynamicResource MaterialDesignCardGroupBox}" materialDesign:ColorZoneAssist.Mode="PrimaryMid" FontSize="20" Margin="0,0,0,0" HorizontalAlignment="Left" Width="230">
+            <GroupBox.Header>
+                <TextBlock Text="App Category" FontFamily="Roboto" HorizontalAlignment="Center" Foreground="White"/>
+            </GroupBox.Header>
+
+            <ListBox x:Name="lbCatList" HorizontalContentAlignment="Center" Margin="0 0 0 0" SelectedIndex="0" SelectionChanged="lbCatList_SelectionChanged">
+                <TextBlock x:Name="enCatAll" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">All</TextBlock>
+                <TextBlock x:Name="enCatEshop" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">eShopApp</TextBlock>
+                <TextBlock x:Name="enCatDLP" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">DLP</TextBlock>
+                <TextBlock x:Name="enCatDemo" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">Demo</TextBlock>
+                <TextBlock x:Name="enCatUpdate" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">Update</TextBlock>
+                <TextBlock x:Name="enCatDLC" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">DLC</TextBlock>
+                <TextBlock x:Name="enCatDsiWare" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">DSiWare</TextBlock>
+                <TextBlock x:Name="enCatDsiSysApp" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">DSiSysApp</TextBlock>
+                <TextBlock x:Name="enCatDsiSysDat" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">DSiSysData</TextBlock>
+                <TextBlock x:Name="enCatSystem" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">System</TextBlock>
+                <TextBlock x:Name="enCatMystery" Margin="0 0 0 0" FontFamily="Roboto" FontSize="14">Mystery</TextBlock>
+            </ListBox>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

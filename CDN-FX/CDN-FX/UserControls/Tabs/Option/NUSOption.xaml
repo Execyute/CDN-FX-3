@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="CDN_FX.UserControls.Tabs.Option.NUSOption"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CDN_FX.UserControls.Tabs.Option"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="263" d:DesignWidth="230">
+    <Grid>
+
+        <GroupBox Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="0,0,0,0" materialDesign:ColorZoneAssist.Mode="PrimaryMid" FontSize="20" VerticalAlignment="Top" Height="263" HorizontalAlignment="Right" Width="230">
+            <GroupBox.Header>
+                <TextBlock Text="Options" FontFamily="Roboto" HorizontalAlignment="Center" Foreground="White"/>
+            </GroupBox.Header>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+
+                <CheckBox x:Name="nusCBBuildCIA" Grid.Row="0" Content="Build CIA" FontFamily="Roboto" FontSize="14" FontWeight="Light" IsChecked="True"/>
+
+                <TextBlock Grid.Row="2" FontFamily="Roboto" FontSize="14">3DS version:</TextBlock>
+                <RadioButton x:Name="nusRBOld3DS" Grid.Row="3" Content="Old 3DS" FontFamily="Roboto" FontSize="14" FontWeight="Light" IsChecked="True"/>
+                <RadioButton x:Name="nusRBNew3DS" Grid.Row="4" Content="New 3DS" FontFamily="Roboto" FontSize="14" FontWeight="Light"/>
+
+                <CheckBox x:Name="cbVersionNum" Grid.Row="6" FontFamily="Roboto" FontSize="14" FontWeight="Light" Content="Change version number(s) to" IsChecked="False"/>
+                <TextBox x:Name="nusTBNewVersionNum" Grid.Row="7" FontFamily="Roboto" FontSize="12" FontWeight="Light" VerticalAlignment="Center" IsEnabled="{Binding ElementName=cbxVersionNum, Path=IsChecked}"/>
+
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

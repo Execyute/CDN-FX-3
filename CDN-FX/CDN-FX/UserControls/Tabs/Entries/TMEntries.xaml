@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="CDN_FX.UserControls.Entries.TMEntries"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CDN_FX.UserControls.Entries"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="263" d:DesignWidth="230">
+    <Grid>
+
+        <GroupBox Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="0,0,0,0" materialDesign:ColorZoneAssist.Mode="PrimaryMid" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Height="263" Width="230">
+            <GroupBox.Header>
+                <TextBlock Text="Tickets" FontFamily="Roboto" HorizontalAlignment="Center" Foreground="White"/>
+            </GroupBox.Header>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="91*" />
+                    <ColumnDefinition Width="18*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Tickets" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="Unique Tickets" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="Duplicates" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Text="System Tickets" FontSize="16" FontFamily="Roboto"/>
+
+                <TextBlock Grid.Column="0" Grid.Row="5" Text="eShop Tickets" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="6" Text="Unique e-Tickets" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Text="Duplicates (e-Tickets)" FontSize="16" FontFamily="Roboto"/>
+                <TextBlock Grid.Column="0" Grid.Row="8" Text="Unowned Tickets" FontSize="16" FontFamily="Roboto"/>
+
+                <TextBlock x:Name="lblTicketCount" Grid.Column="1" Grid.Row="0" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblTicketUniqueCount" Grid.Column="1" Grid.Row="1" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblTicketDuplicatesCount" Grid.Column="1" Grid.Row="2" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblTicketSystemCount" Grid.Column="1" Grid.Row="3" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+
+                <TextBlock x:Name="lblETicketCount" Grid.Column="1" Grid.Row="5" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblETicketUniqueCount" Grid.Column="1" Grid.Row="6" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblETicketDuplicatesCount" Grid.Column="1" Grid.Row="7" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+                <TextBlock x:Name="lblETicketUnownedCount" Grid.Column="1" Grid.Row="8" Text="0" FontSize="16" TextAlignment="Left" FontFamily="Roboto" FontWeight="Light"/>
+
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

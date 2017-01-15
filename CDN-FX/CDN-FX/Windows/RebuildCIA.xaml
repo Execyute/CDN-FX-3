@@ -1,0 +1,24 @@
+﻿<Window x:Class="CDN_FX.Windows.RebuildCIA"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CDN_FX.Windows"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Rebuild content" Height="150" Width="587" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Resources/template.png" />
+    </Window.Background>
+
+    <Grid>
+
+        <Label Content="Rebuilding Content" FontFamily="Roboto" FontWeight="Medium" Foreground="White" FontSize="25" Margin="170,15,170,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="rcLBStatus" Content="Completed 0 of 0" FontFamily="Roboto" FontWeight="Medium" Foreground="White" FontSize="12" Margin="0,75,360,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="rcPGProgress" HorizontalAlignment="Left" Height="10" Margin="0,101,0,0" VerticalAlignment="Top" Width="581" />
+
+    </Grid>
+</Window>

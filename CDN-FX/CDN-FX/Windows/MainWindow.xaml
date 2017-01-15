@@ -1,0 +1,146 @@
+﻿<Window x:Class="CDN_FX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:local="clr-namespace:CDN_FX"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        Title="CDN-FX 3" Height="750.765" Width="1290.316">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <!-- Menu Bar -->
+        <materialDesign:ColorZone Padding="5" materialDesign:ShadowAssist.ShadowDepth="Depth0" Mode="Dark" DockPanel.Dock="Top">
+            <DockPanel>
+                <Menu DockPanel.Dock="Left" Background="#303030">
+                    <!-- File -->
+                    <MenuItem Header="_File" Height="20" Foreground="White" FontFamily="Roboto">
+                        <!-- Ticket Manager -->
+                        <MenuItem Header="_Ticket Manager" Height="30" Foreground="White" FontFamily="Roboto" >
+                            <MenuItem x:Name="menuTMOpen" Header="_Open ticket.db" Height="30" Click="menuTMOpen_Click" />
+                            <Separator />
+                            <MenuItem x:Name="menuTMOutput" Header="_Select output folder" Height="30" Click="menuTMOutput_Click"/>
+
+                        </MenuItem>
+                        <!-- Titledownloader-->
+                        <MenuItem Header="_Titledownloader" Height="30" Foreground="White" FontFamily="Roboto" >
+                            <MenuItem x:Name="menuTDOpen" Header="_Open encTitleKeys.bin" Height="30" Click="menuTDOpen_Click"/>
+                            <Separator />
+                            <MenuItem x:Name="menuTDOutput" Header="_Select output folder" Height="30" Click="menuTDOutput_Click"/>
+                            <MenuItem x:Name="menuTDTikOutput" Header="_Select .tik output folder" Height="30" Click="menuTDTikOutput_Click"/>
+                        </MenuItem>
+                        <!-- NUS Downloader-->
+                        <MenuItem Header="_NUS Downloader" Height="30" Foreground="White" FontFamily="Roboto" >
+                            <MenuItem x:Name="menuNUSOutput" Header="_Select output folder" Height="30" Click="menuNUSOutput_Click"/>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem x:Name="menuClose" Header="_Close" Height="30" Click="menuClose_Click" />
+                    </MenuItem>
+                    <!-- Options -->
+                    <MenuItem Header="_Options" Height="20" Foreground="White" FontFamily="Roboto">
+                        <MenuItem  x:Name="menuSettings" Header="_Settings" Height="30" Click="menuSettings_Click" />
+                    </MenuItem>
+                    <!-- Help -->
+                    <MenuItem Header="_Help" Height="20" Foreground="White" FontFamily="Roboto">
+                        <MenuItem x:Name="menuGitHub" Header="_GitHub Page" Height="30" Click="menuGitHub_Click" />
+                        <MenuItem x:Name="menuGBAThread" Header="_GBATemp Thread" Height="30" Click="menuGBAThread_Click" />
+                    </MenuItem>
+                </Menu>
+                <TextBlock x:Name="tbProgressIndicator" Height="20" Foreground="White" FontFamily="Roboto" FontWeight="Light" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0 0 10 0"></TextBlock>
+                <ProgressBar x:Name="pbProgress" Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" IsIndeterminate="False" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                
+            </DockPanel>
+         </materialDesign:ColorZone>
+
+        <!--Tabcontrol -->
+
+        <dockablz:Layout>
+            <dragablz:TabablzControl BorderThickness="0" Margin="0 0 0 0">
+
+                <!-- Ticket Manager -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="EqualBox" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="Ticket Manager" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <local:TicketManager x:Name="ucTicketManager"/>
+
+                </TabItem>
+                <!--Titledownloader [Auto]-->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="download" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="Title Downloader [encTitleKeys.bin]" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <local:TitleDLAuto x:Name="ucTitleDownloaderAuto" />
+
+                </TabItem>
+                <!-- Titledownloader [Manual] -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="download" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="Title Downloader [Manual]" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <local:TitleDLManual x:Name="ucTitleDownloaderManual" />
+
+                </TabItem>
+                <!-- NUS Downloader -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BriefcaseDownload" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="NUS Downloader" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <local:NUSDownloader x:Name="ucNUSDownloader" />
+
+                </TabItem>
+                <!-- Title Database Viewer -->
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FormatListBulleted" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20"/>
+                            <TextBlock Text="Title Database Viewer" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Roboto" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <local:TitleDatabaseViewer x:Name="ucTitledatabaseViewer" />
+                    
+                </TabItem>
+
+            </dragablz:TabablzControl>
+        </dockablz:Layout>
+
+    </DockPanel>
+
+</Window>

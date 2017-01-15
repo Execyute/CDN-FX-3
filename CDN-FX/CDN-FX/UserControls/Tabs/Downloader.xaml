@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="CDN_FX.UserControls.Downloader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CDN_FX.UserControls"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="350" d:DesignWidth="230">
+    <Grid>
+        <GroupBox Style="{DynamicResource MaterialDesignCardGroupBox}" Margin="0,0,0,0" materialDesign:ColorZoneAssist.Mode="PrimaryMid" FontSize="20" HorizontalAlignment="Right" Width="230">
+            <GroupBox.Header>
+                <TextBlock Text="Download" FontFamily="Roboto" HorizontalAlignment="Center" Foreground="White"/>
+            </GroupBox.Header>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                    <RowDefinition Height= "20"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <!-- First Half -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Title -->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">Title:</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">Attempt:</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">Failed:</TextBlock>
+
+                        <!-- Countstats -->
+                        <TextBlock x:Name="lblTitleCount" Grid.Column="1" Grid.Row="0" FontFamily="Roboto" FontSize="14" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left">0/0</TextBlock>
+                        <TextBlock x:Name="lblAttemptCount" Grid.Column="1" Grid.Row="1" FontFamily="Roboto" FontSize="14" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left">0/0</TextBlock>
+                        <TextBlock x:Name="lblFailedCount" Grid.Column="1" Grid.Row="2" FontFamily="Roboto" FontSize="14" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left">0</TextBlock>
+
+                    </Grid>
+
+                    <!-- Iconview -->
+                    <Image x:Name="imgIcon" Grid.Column="2" Stretch="Uniform" Source="pack://application:,,,/Resources/icon.png" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+                </Grid>
+
+                <!-- Spacer -->
+
+                <TextBlock Grid.Row="2" FontFamily="Roboto" VerticalAlignment="Center" FontWeight="Light">Current Title</TextBlock>
+
+                <!-- DL Info Grid -->
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                        <RowDefinition Height="23" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">Name:</TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">TitleID:</TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">TMD:</TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="3" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">Files:</TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="4" FontFamily="Roboto" FontSize="14" VerticalAlignment="Center">Downloaded:</TextBlock>
+
+                    <!-- Countstats -->
+                    <TextBlock x:Name="lblTitleName" Grid.Column="1" Grid.Row="0" FontFamily="Roboto" FontSize="13" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock x:Name="lblTitleID" Grid.Column="1" Grid.Row="1" FontFamily="Roboto" FontSize="13" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock x:Name="lblTMD" Grid.Column="1" Grid.Row="2" FontFamily="Roboto" FontSize="13" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock x:Name="lblFilesCount" Grid.Column="1" Grid.Row="3" FontFamily="Roboto" FontSize="13" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left">0/0</TextBlock>
+                    <TextBlock x:Name="lblDownloaded" Grid.Column="1" Grid.Row="4" FontFamily="Roboto" FontSize="13" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Left">0 MB / 0 MB</TextBlock>
+
+                </Grid>
+
+                <ProgressBar x:Name="pgDownloadProgress" Grid.Row="4" />
+                <Button x:Name="btnDownload" Grid.Row="5" FontFamily="Roboto" FontSize="14" Content="Download" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+
+            </Grid>
+
+        </GroupBox>
+    </Grid>
+</UserControl>
